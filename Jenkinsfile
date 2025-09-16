@@ -24,7 +24,7 @@ pipeline {
         
         stage ("Deploy") {
             steps {
-                sh 'docker run -itd --name bank-app -p 1111:80 basha10/paytmapp:bank'
+                sh 'docker run -itd --name bankapp -p 1111:80 basha10/paytmapp:bank'
             }
         }
     }
