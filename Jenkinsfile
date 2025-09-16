@@ -9,14 +9,14 @@ pipeline {
         }
         stage ("Tag") {
             steps {
-                sh 'docker tag image1 basha10/paytm:bank'
+                sh 'docker tag image1 basha10/paytmapp:bank'
             }
         }
         stage('Push') {
             steps {
                 script {
                     withDockerRegistry(credentialsId: '8b52ef8b-444a-4a1d-91a9-29f73da4beae') {
-                        sh 'docker push basha10/paytm:bank'
+                        sh 'docker push basha10/paytmapp:bank'
                     }
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
         
         stage ("Deploy") {
             steps {
-                sh 'docker run -itd --name bank-app -p 1111:80 basha10/paytm:bank'
+                sh 'docker run -itd --name bank-app -p 1111:80 basha10/paytmapp:bank'
             }
         }
     }
