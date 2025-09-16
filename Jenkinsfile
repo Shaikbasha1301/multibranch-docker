@@ -15,7 +15,7 @@ pipeline {
         stage('Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'dockerhub') {
+                    withDockerRegistry(credentialsId: ''8b52ef8b-444a-4a1d-91a9-29f73da4beae') {
                         sh 'docker push basha10/paytm:bus'
                     }
                 }
